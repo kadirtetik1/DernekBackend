@@ -8,6 +8,7 @@ namespace Application1.ViewModels.User
 {
     public class Vm_User_Control
     {
-
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

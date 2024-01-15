@@ -1,14 +1,14 @@
-﻿using Domain.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Application1.ViewModels.Address
 {
-    public class Address: BaseEntity
+    public class Vm_Address_Update
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Lastname { get; set; }
         public string FatherName { get; set; }

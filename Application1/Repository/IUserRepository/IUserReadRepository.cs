@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Application1.Repository.IUserRepository
 {
-    public interface IUserReadRepository: IReadRepository<User>
+    public interface IUserReadRepository : IReadRepository<User>
     {
-
+        //Task<User> GetByIdAsync(Guid ıd);
     }
 }
