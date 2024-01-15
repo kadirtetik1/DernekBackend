@@ -1,4 +1,9 @@
+using Persistence;
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddPersistenceServices();
 
 // Add services to the container.
 

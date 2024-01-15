@@ -9,6 +9,6 @@ namespace Application1.Repository.IAddressRepository
 {
     public interface IAddressWriteRepository: IWriteRepository<Address>
     {
-
+        
     }
 }
