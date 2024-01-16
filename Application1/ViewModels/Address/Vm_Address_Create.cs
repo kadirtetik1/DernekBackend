@@ -15,5 +15,6 @@ namespace Application1.ViewModels.Address
         public string Phone { get; set; }
         public string WorkInfo { get; set; }
         public string Unvan { get; set; }
+        public Guid? UserID { get; set; }
     }
 }
