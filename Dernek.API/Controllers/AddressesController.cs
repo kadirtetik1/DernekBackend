@@ -62,6 +62,7 @@ namespace Dernek.API.Controllers
                 WorkInfo = model.WorkInfo,
                 Unvan = model.Unvan,
                 UserID= model.UserID,
+                Family= model.Family,
 
 
             };
@@ -88,6 +89,7 @@ namespace Dernek.API.Controllers
             address.WorkInfo = model.WorkInfo;
             address.Unvan = model.Unvan;
             address.UserID = model.UserID;
+            address.Family = model.Family;
            
 
             await _addressWriteRepository.SaveAsync();
