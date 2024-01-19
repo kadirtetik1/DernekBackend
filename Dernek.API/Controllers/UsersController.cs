@@ -1,4 +1,5 @@
-﻿using Application1.DTOs;
+﻿using Application1.Abstract;
+using Application1.DTOs;
 using Application1.Repository.IUserRepository;
 using Application1.ViewModels.User;
 using Domain;
@@ -15,11 +16,13 @@ namespace Dernek.API.Controllers
     {
         readonly private IUserReadRepository _userReadRepository;
         readonly private IUserWriteRepository _userWriteRepository;
-        
-        public UsersController(IUserReadRepository userReadRepository, IUserWriteRepository userWriteRepository)
+        readonly ITokenHandler _tokenHandler;
+
+        public UsersController(IUserReadRepository userReadRepository, IUserWriteRepository userWriteRepository, ITokenHandler tokenHandler)
         {
             _userReadRepository = userReadRepository;
             _userWriteRepository = userWriteRepository;
+            _tokenHandler = tokenHandler;
         }
 
         [HttpGet]
@@ -101,24 +104,11 @@ namespace Dernek.API.Controllers
             {
                 string fullname = user2.Name + " " + user2.Lastname;
 
-                //string department2 = "";
 
-                //if (!string.IsNullOrEmpty(user2.department))
-                //{
-                //    department2 = user2.department;
+                Token token = _tokenHandler.CreateAccessToken(30, user2.Id, user2.Username, fullname, user2.Admin);
 
-                //}
-
-                //else
-                //{
-                //    department2 = "empty";
-                //}
-
-
-                //Token token = _tokenHandler.CreateAccessToken(30, student2.Id, student2.user_name, fullname, "student", department2);
-
-                // return Ok(token);  //success dönüyordu!
-                return Ok(success);  //success dönüyordu!
+                return Ok(token);  //success dönüyordu!
+                //return Ok(success);  
             }
 
 
